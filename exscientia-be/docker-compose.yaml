@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  mongo:
+    hostname: "mongo" # No need to expose internal port, only connected to by Go backend in same network.
+    image: mongo:latest
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=exscientia
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=supersecretpassword
+    volumes:
+      - ./db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro # will run init script on db startup
+      #- ./mongodb/data:/data/db #Enable if wanting to save mongo data locally
+
+  exscientia-go-be:
+    image: exscientia/exscientia-go-be:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - DB_USER=user
+      - DB_PASSWORD=supersecretpassword # credentials would be out of version control, locally or in CI secrets config.
+      - DB_DATABASE=exscientia # must match MONGO_INITDB_DATABASE
+      - LOG_LEVEL=1 # 1=info, 3=error - see https://github.com/rs/zerolog#leveled-logging
+      - SERVER_HOST=localhost
+      - SERVER_PORT=8080

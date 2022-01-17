@@ -1,0 +1,24 @@
+/* Generic global styling*/
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@600;700&family=Montserrat:wght@800&display=swap");
+
+:root {
+	--font-title: "Montserrat", sans-serif;
+	--font-body: "Martel", serif;
+
+	--font-size-title: 2rem;
+	--font-size-subtitle: 1.5rem;
+
+	--primary-blue: #2839ca;
+	--secondary-blue: #eef0fe;
+	--primary-white: #ffffff;
+
+	/* Values not used, however here for reference-use in media queries */
+	--screen-size-l: 1550px;
+	--screen-size-m: 1250px;
+	--screen-size-tablet: 960px;
+	--screen-size-mobile: 620px;
+}
+
+html {
+	background-color: var(--secondary-blue);
+}

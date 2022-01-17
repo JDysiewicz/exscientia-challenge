@@ -1,0 +1,3 @@
+If using client-side routing (e.g. react-router), this would contain a Page component for each route in the application.
+
+As this project does not make use of any client-side routing, this folder exists for completeness to demonstrate the full file structure.
