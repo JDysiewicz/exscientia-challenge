@@ -6,6 +6,7 @@ Note, I have used comments rather liberally to explain decisions or elaborate on
 
 ## Usage
 
+- Install npm packages with `npm install`.
 - Start React development server with `npm start` (will bring up the application on `localhost:3000` by default).
 - Use instructions found in the back-end directory to bring up the API server.
 - **Note** - If changing the back-end server host/port from their default `localhost:8080`, change the `REACT_APP_API_URL` environment variable found in `.env` accordingly.
@@ -78,6 +79,7 @@ Mainly due to time constraints, there are many areas of this application which c
 - **Automatically calculate molar mass of a custom molecule**: Given `smiles-drawer` can calculate the chemical formula for a given SMILES string, a look-up table containing chemical elements and their molar masses could be used to calculate the molar mass of the molecular based on the formula (this would have to include functionality for dealing with 2-letter symbols like `Os` and `Fe`, numbers like `H2O`, and brackets like `Mg(OH)2`).
 - **CSS organisation**: The CSS for the application needs some more tidying up; proper use of `rem` and `em` would be needed, appropriate variables for padding size, etc. It is organised in a basic manner (e.g. properties like basic color schemes have variables, relative units have been used where possible, etc), however would be difficult to scale this and adapt to different screen sizes.
 - **Proper error handling**: Error handling, both in the case of a failed network request or an incorrect SMILES string, could be improved from a UX perspective. For the former issue, an error image of some sort would be more user-friendly, and for the latter issue, perhaps highlighting the invalid SMILES character input would be a good addition.
+- **Browser compatibility**: A full browser compatability check has not been done to ensure all styling/functionality remains consistent across browsers, and so small styling bugs are expected depending on the browser used.
 
 ## Further notes
 
