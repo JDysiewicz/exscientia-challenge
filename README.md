@@ -22,11 +22,13 @@ The back-end is comprised of a Go HTTP server and a Mongo database. These are bo
 ## Usage
 
 This application has a few prerequisites:
+
 - npm
 - node
 - docker
 
-Once these are installed, bring up the application as follows:
+Once these are installed, bring up the application as follows:
+
 - `cd` into the `exscientia-fe` and `exscientia-be` directories, and follow the instructions laid out in the respective `README.md` files to bring up each part of the application.
 - Note, both the front-end and back-end must be brought up for full functionality of the application.
 
